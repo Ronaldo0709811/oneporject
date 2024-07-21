@@ -1,0 +1,75 @@
+git remote add origin https://github.com/Ronaldo0709811/oneporject.git
+git branch -M main
+git push -u origin main
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+
+        (function flexble(window, document) {
+            var docEl = document, documentElement
+            var dpr = window, devicePixelRatio || 1
+
+            function setBodyFontSize() {
+                if (document, body) {
+                    document.body.style.fontSize = 12 * dpr + 'px'
+                }
+                else {
+                    document, addEventListener('DOMContentLoaded', setBodyFontSize)
+                }
+            }
+            setBodyFontSize();
+
+            function setRemUnit() {
+                var rem = docEl.clientWidth / 10
+                docEl.style.fontSize = rem + 'px'
+            }
+
+            setRemUnit()
+
+            window.addEventListener('resize', setRemUnit)
+            window.addEventListener('pageshow', function (e) {
+                if (e.persisted) {
+                    setRemUnit()
+                }
+            })
+
+            if (dpr >= 2) {
+
+                var fakeBody = document.createElement('body')
+                var testElement = document.createElement('div')
+                testElement.style.border = '.5px solid transparent'
+                fakeBody.appendChild(testElement)
+                docEl.appendChild(fakeBody)
+            }
+
+        })(window, document)
+
+        // 这段代码是一个简单的响应式布局的实现。它主要实现了以下功能：
+
+        // 根据设备的屏幕分辨率（devicePixelRatio）设置页面字体大小。
+        // 根据设备的屏幕宽度（clientWidth）设置页面根元素的字体大小（rem）。
+        // 当窗口大小发生变化时，重新计算页面根元素的字体大小（rem）。
+        // 当页面被缓存时，重新计算页面根元素的字体大小（rem）。
+        // 这段代码首先定义了一个名为flexble的函数，该函数接收两个参数：window和document。然后，它首先检查document是否已经加载完成，
+        // 如果没有，则添加一个事件监听器，当DOMContentLoaded事件触发时，调用setBodyFontSize函数。
+
+        // setBodyFontSize函数会设置页面的字体大小。首先，它会检查document.body是否存在，如果不存在，则等待DOMContentLoaded事件触发后再次尝试设置字体大小。
+        // 然后，它会将页面的字体大小设置为12像素乘以设备的屏幕分辨率（dpr）。
+
+        // setRemUnit函数会根据设备的屏幕宽度（clientWidth）设置页面根元素的字体大小（rem）。首先，它会计算出rem的值，然后将页面根元素的字体大小设置为该值。
+
+        // 最后，flexble函数会监听窗口大小变化和页面显示事件，当这些事件触发时，重新计算页面根元素的字体大小（rem）。同时，如果设备的屏幕分辨率（dpr）大于等于2，
+        // 它会创建一个虚拟的body元素和一个div元素，用于测试设备的屏幕分辨率。
+    </script>
+</body>
+
+</html>

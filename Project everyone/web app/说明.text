@@ -1,0 +1,28 @@
+没有添加的内容
+todo-app/
+│
+├── client/                  # 前端代码
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       ├── App.js
+│       ├── index.js
+│       └── ...
+│
+├── server/                  # 后端代码
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   ├── config/
+│   ├── server.js
+│   └── ...
+│
+├── .gitignore
+├── package.json
+└── README.md
+2使用Create React App快速启动React项目。
+npx create-react-app client
+3
+npm install react-router-dom

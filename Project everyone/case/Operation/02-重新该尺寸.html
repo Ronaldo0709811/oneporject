@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .sidebar {
+            width: 200px;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: -200px;
+            transition: left 0.3s ease;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .sidebar li:hover {
+            background-color: #555;
+        }
+
+        .content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+
+        button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+
+        /* CSS样式：定义了侧边栏的样式，包括宽度、高度、背景颜色、位置等。当侧边栏的active类被添加时，侧边栏会从左侧滑出。 */
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <ul>
+            <li>首页</li>
+            <li>关于我们</li>
+            <li>服务</li>
+            <li>联系我们</li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>欢迎来到我们的网站</h1>
+        <p>这是一个简单的侧边栏导航栏示例。</p>
+    </div>
+    <button class="toggle-button">切换侧边栏</button>
+
+    <script>
+        // resize浏览器窗口大小发生变化时候触发的事件
+        window.addEventListener('resize', function () {
+            console.log(document.documentElement.clientWidth, document.documentElement.clientHeight);
+
+        })
+        // 获取宽高 不含边框 margin 滚动条
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebar = document.querySelector('.sidebar');
+            const toggleButton = document.querySelector('.toggle-button');
+
+            toggleButton.addEventListener('click', function () {
+                sidebar.classList.toggle('active');
+            });
+        });
+
+    </script>
+
+    <!-- JavaScript逻辑：在JavaScript中，通过querySelector方法获取侧边栏和切换按钮的元素，并添加点击事件监听器。当点击按钮时，
+    使用classList.toggle方法切换侧边栏的active类，从而实现侧边栏的显示和隐藏。
+    这样，当用户点击“切换侧边栏”按钮时，侧边栏会在左侧和右侧之间切换显示 -->
+</body>
+
+</html>

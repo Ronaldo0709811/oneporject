@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 初始数据
+        const Data = [{ URL: '', title: '', color: '' }]
+        // 生成随机数长度不能超过数组长度
+        const random = parseInt(Math.random() * Data.length)
+        // 获取元素并渲染元素
+        const img = document.querySelector('.slider-warpper .img')
+        const p = document.querySelector('.slider-footer p')
+        const footer = document.querySelector('.slider-footer')
+        img.src = Data[random].URL
+        p.innerHTML = Data[random].title
+        footer.style.backgroundColor = Data[random].color
+        // 修改小圆点 删除原来的active 再给当前的元素加activ
+        const circle = document.querySelector(`.slider-indicator li:nth-child(${random + 1})`)
+        li.classList.add(active)
+    </script>
+</body>
+
+</html>

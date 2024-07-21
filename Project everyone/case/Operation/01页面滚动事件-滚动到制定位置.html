@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //  当页面滚动大于300像素就显示电梯导航
+        // 给页面添加滚动事件
+        // 获取电梯导航元素
+        const elevator = document.querySelector('.xtx-elevator')    
+//         console.log(elevator);
+
+        window.addEventListener('scroll', function () {
+            const n = document.documentElement.scrollTop
+
+            elevator.style.opacity = n >= 300 ? 1 : 0  //如果大于了300 就返回1  1赋值给opacity 否则返回0
+
+        })
+        // 当点击顶部按钮返回到顶部
+        // 获取元素
+        const backtop = document.querySelector('#backtop')
+        backtop.addEventListener('click', function () {
+            document.documentElement.scrollTop = 0      
+            // document.documentElement.scrollTop = 0  //返回顶部
+        })
+    </script>
+</body>
+
+</html>

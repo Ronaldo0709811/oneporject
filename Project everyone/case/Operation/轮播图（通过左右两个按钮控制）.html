@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        button {
+            width: 60px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="slider">
+            <div class="slider-warpper">
+                <img src="/Project everyone/images/imagesone/01.jpg" alt="">
+            </div>
+            <div class="slider-footer">
+                <p>hello warld</p>
+                <ul class="slider-indicator">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="toggle">
+                    <button class="next">1</button>
+                    <button class="prev">2</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script>
+        const Data = [
+            { url: '/Project everyone/images/imagesone/01.jpg', title: '你喜欢的球星有哪些？', color: 'rgb(100, 50, 68)' },
+            { url: '/Project everyone/images/imagesone/02.jpg', title: '你是什么时候开始的', color: 'rgb(22, 50, 68)' },
+            { url: '/Project everyone/images/imagesone/03.jpg', title: '在你影响中的球星', color: 'rgb(100, 32, 68)' },
+            { url: '/Project everyone/images/imagesone/04.jpg', title: '用吉吉的态度面对', color: 'rgb(100, 50, 11)' },
+            { url: '/Project everyone/images/imagesone/05.jpg', title: '开始享受这一切？', color: 'rgb(55, 50, 68)' },
+            { url: '/Project everyone/images/imagesone/06.jpg', title: '我们要开心一点', color: 'rgb(66, 50, 121)' }
+        ]
+        const img = document.querySelector('.slider-warpper img')
+        const p = document.querySelector('.slider-footer p')
+        const footer = document.querySelector('.slider-footer')
+        //
+        let i = 0
+        // 
+        const next = document.querySelector('.next')
+        next.addEventListener('click', function () {
+            i++
+            i = i > Data.length ? 0 : i
+            toggle()
+        })
+        const prev = document.querySelector('.prev')
+        prev.addEventListener('click', function () {
+            i--
+            i = i < 0 ? Data.length : i
+            toggle()
+        })
+        function toggle() {
+            img.src = Data[i].url
+            p.innerHTML = Data[i].title
+            footer.style.backgroundColor = Data[i].color
+            document.querySelector('.slider-indicator').classList.remove('active')
+            document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+        }
+        let timerId = setInterval(function () {
+            next.click()
+        }, 1000)
+        const slider = document.querySelector('.slider')
+        slider.addEventListener('mouseenter', function () {
+            clearInterval(timerId)
+        })
+        slider.addEventListener('mouseleave', function () {
+            clearInterval(timerId)
+            timerId = setInterval(function () {
+                next.click()
+            }, 1000)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const Data = [{ URL: '', title: '', color: '' }]
+        const p = document.querySelector('.slider-warpper p')
+        const img = document.querySelector('.slider-warpper img')
+        let i = 0
+        setInterval(function () {
+            i++
+            if (i >= Data.length) {
+                i = 0
+
+            }
+        })
+        img.src = Data[i], URL
+        p.innerHTML = Data[i].title
+        document.querySelector('.slider-indicator .active').classList.remove('active')
+        document.querySelector(`.slider- indicator li:nth-child(${i + 1})`).classList.add('active')
+    </script>
+</body>
+
+</html>

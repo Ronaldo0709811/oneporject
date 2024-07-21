@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Project everyone/CSS/tab栏切换案例.css">
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab-nav">
+            <h3>xxxxxx</h3>
+            <ul>
+                <li><a href="#" class="active"></a>xxxxxx</li>
+                <li><a href="">xxx</a></li>
+                <li><a href="">xxx</a></li>
+                <li><a href="">xxx</a></li>
+                <li><a href="javascript:;">xxx</a></li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div class="item active"><img src="/Project everyone/images/imagesone/02.jpg" alt=""></div>
+            <div class="item"><img src="/Project everyone/images/imagesone/03.jpg" alt=""></div>
+            <div class="item"><img src="/Project everyone/images/imagesone/04.jpg" alt=""></div>
+            <div class="item"><img src="/Project everyone/images/imagesone/05.jpg" alt=""></div>
+            <div class="item"><img src="/Project everyone/images/imagesone/06.jpg" alt=""></div>
+        </div>
+    </div>
+    <script>
+        const ul = document.querySelector('ul')
+        const as = document.querySelector('.tab-nav a')
+        //  
+        for (let i = 0; i < as.length; i++) {
+            as[i].addEventListener('mouseenter', function () {
+                document.querySelector('.tab-nav .active').classList.remove('active')
+                this.classList.add('active')
+
+            })
+        }
+    </script>
+</body>
+
+</html>

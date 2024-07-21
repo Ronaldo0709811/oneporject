@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="mi">
+        <input type="search" placeholder="小米">
+        <ul class="result-List">
+            <li><a href="#">全部商品</a></li>
+            <li><a href="#">小米13</a></li>
+            <li><a href="#">小米14</a></li>
+        </ul>
+    </div>
+    <script>
+        const ul = document.querySelector('.result-List')
+        const input = document.querySelector('type = search')
+        input.addEventListener('focus', function () {
+            ul.style.display = 'block'
+            input.classList.add('search')
+        })
+        input.addEventListener('blur', function () {
+            ul.style.display = 'none'
+            input.classList.remove('search')
+        })
+    </script>
+</body>
+
+</html>
