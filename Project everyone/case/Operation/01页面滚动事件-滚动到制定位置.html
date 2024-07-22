@@ -8,13 +8,14 @@
 </head>
 
 <body>
-
+    <div class="xtx-elevator" style="opacity: 0;">电梯导航</div>
+    <div style="height: 2000px;">页面内容</div>
     <script>
         //  当页面滚动大于300像素就显示电梯导航
         // 给页面添加滚动事件
         // 获取电梯导航元素
-        const elevator = document.querySelector('.xtx-elevator')    
-//         console.log(elevator);
+        const elevator = document.querySelector('.xtx-elevator')
+        //         console.log(elevator);
 
         window.addEventListener('scroll', function () {
             const n = document.documentElement.scrollTop
@@ -26,7 +27,7 @@
         // 获取元素
         const backtop = document.querySelector('#backtop')
         backtop.addEventListener('click', function () {
-            document.documentElement.scrollTop = 0      
+            document.documentElement.scrollTop = 0
             // document.documentElement.scrollTop = 0  //返回顶部
         })
     </script>

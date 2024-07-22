@@ -18,16 +18,16 @@ class BottomNavigationBarApp:
         self.button_frame = tk.Frame(self.root, pady=10)
         self.button_frame.pack()
 
-        self.button1 = tk.Button(self.button_frame, text="页面1", width=10, command=lambda: self.show_content("页面1"))
+        self.button1 = tk.Button(self.button_frame, text="首页", width=10, command=lambda: self.show_content("首页"))
         self.button1.grid(row=0, column=0, padx=10)
 
-        self.button2 = tk.Button(self.button_frame, text="页面2", width=10, command=lambda: self.show_content("页面2"))
+        self.button2 = tk.Button(self.button_frame, text="活动", width=10, command=lambda: self.show_content("活动"))
         self.button2.grid(row=0, column=1, padx=10)
 
-        self.button3 = tk.Button(self.button_frame, text="页面3", width=10, command=lambda: self.show_content("页面3"))
+        self.button3 = tk.Button(self.button_frame, text="更多", width=10, command=lambda: self.show_content("更多"))
         self.button3.grid(row=0, column=2, padx=10)
 
-        self.button4 = tk.Button(self.button_frame, text="页面4", width=10, command=lambda: self.show_content("页面4"))
+        self.button4 = tk.Button(self.button_frame, text="我的", width=10, command=lambda: self.show_content("我的"))
         self.button4.grid(row=0, column=3, padx=10)
 
         # 显示内容的区域
